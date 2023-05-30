@@ -13,3 +13,4 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 		# 上方に飛ぶ
 		state.apply_central_impulse(palse)
 	
+	
