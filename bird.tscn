@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2kkif4mkjq2h"]
+[gd_scene load_steps=4 format=3 uid="uid://4u3j5o4orug4"]
 
 [ext_resource type="Script" path="res://bird.gd" id="1_iyleg"]
 [ext_resource type="Texture2D" uid="uid://bwbtenf342v5l" path="res://image/icon.svg" id="2_r6w4s"]
