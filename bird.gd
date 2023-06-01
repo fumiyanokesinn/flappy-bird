@@ -12,5 +12,6 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 	if Input.is_action_pressed("fling"):
 		# 上方に飛ぶ
 		state.apply_central_impulse(palse)
-	
-	
+
+func _on_body_entered(body):
+	print(body)

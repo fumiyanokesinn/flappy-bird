@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://3s1ri75omq2p"]
 
 [ext_resource type="PackedScene" uid="uid://4u3j5o4orug4" path="res://bird.tscn" id="1_ir62d"]
-[ext_resource type="PackedScene" path="res://block.tscn" id="2_e3sx1"]
+[ext_resource type="PackedScene" uid="uid://8qb0aj8ixheo" path="res://block.tscn" id="2_e3sx1"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Block" parent="." instance=ExtResource("2_e3sx1")]
 
 [node name="Bird" parent="." instance=ExtResource("1_ir62d")]
-position = Vector2(351, 400)
+position = Vector2(782, 358)
