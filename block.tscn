@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://ch8wltwcsxcpf"]
+[gd_scene load_steps=3 format=3 uid="uid://ch8wltwcsxcpf"]
+
+[ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="1_adam2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
+size = Vector2(175, 590)
 
 [node name="Block" type="StaticBody2D"]
+position = Vector2(754, 382)
+metadata/_edit_group_ = true
 
 [node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_adam2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_vjnnt")
