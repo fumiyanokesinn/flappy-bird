@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch8wltwcsxcpf"]
+[gd_scene load_steps=4 format=3 uid="uid://ch8wltwcsxcpf"]
 
 [ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="1_adam2"]
+[ext_resource type="Script" path="res://block.gd" id="1_mts5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
 
 [node name="Block" type="StaticBody2D"]
-position = Vector2(754, 382)
+position = Vector2(1053, 427)
+script = ExtResource("1_mts5g")
 metadata/_edit_group_ = true
 
 [node name="Image" type="Sprite2D" parent="."]
