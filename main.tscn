@@ -9,3 +9,10 @@
 
 [node name="Bird" parent="." instance=ExtResource("1_ir62d")]
 position = Vector2(782, 358)
+
+[node name="Wall" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PackedVector2Array(-6, -3, -1, -91, 1386, -91, 1386, 789, -1, 787, -3, 720, 1278, 720, 1278, -1)
