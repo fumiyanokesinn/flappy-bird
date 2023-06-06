@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2kkif4mkjq2h"]
+[gd_scene load_steps=4 format=3 uid="uid://4u3j5o4orug4"]
 
 [ext_resource type="Script" path="res://bird.gd" id="1_iyleg"]
 [ext_resource type="Texture2D" uid="uid://bwbtenf342v5l" path="res://image/icon.svg" id="2_r6w4s"]
@@ -9,6 +9,8 @@ radius = 69.567
 [node name="Bird" type="RigidBody2D"]
 position = Vector2(124, 140)
 scale = Vector2(0.998628, 1)
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_iyleg")
 metadata/_edit_group_ = true
 
@@ -17,3 +19,6 @@ texture = ExtResource("2_r6w4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3t66o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
