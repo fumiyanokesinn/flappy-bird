@@ -21,5 +21,4 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PackedVector2Array(-6, -3, -1, -91, 1386, -91, 1386, 789, -1, 787, -3, 720, 1278, 720, 1278, -1)
 
-[connection signal="tree_exited" from="Block" to="." method="_on_block_tree_exited"]
 [connection signal="tree_exiting" from="Block" to="." method="_on_block_tree_exiting"]

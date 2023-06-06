@@ -12,3 +12,4 @@ func _on_block_tree_exiting():
 	block.tree_exiting.connect(_on_block_tree_exiting)
 	# 土管を再出現
 	add_child.call_deferred(block)
+
