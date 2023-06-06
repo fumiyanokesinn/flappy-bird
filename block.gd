@@ -12,3 +12,6 @@ func _ready():
 func _process(delta):
 	# 位置に速度を足し込む
 	position += velocity * delta
+	# 画面外に出たら消える
+	if (position.x < -200):
+		queue_free()
