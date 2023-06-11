@@ -7,7 +7,7 @@
 size = Vector2(175, 590)
 
 [node name="Block" type="StaticBody2D"]
-position = Vector2(1053, 427)
+position = Vector2(87, -2)
 script = ExtResource("1_mts5g")
 metadata/_edit_group_ = true
 

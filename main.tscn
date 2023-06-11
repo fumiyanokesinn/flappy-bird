@@ -9,10 +9,10 @@ script = ExtResource("1_r30sg")
 blockScene = ExtResource("2_e3sx1")
 
 [node name="Block" parent="." instance=ExtResource("2_e3sx1")]
-position = Vector2(939, 427)
+position = Vector2(16, 776)
 
 [node name="Bird" parent="." instance=ExtResource("1_ir62d")]
-position = Vector2(151, 360)
+position = Vector2(326, 358)
 
 [node name="Wall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
