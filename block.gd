@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 # 移動速度
-var velocity = Vector2(-100, 0)
+var velocity = Vector2(-300, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

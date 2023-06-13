@@ -27,7 +27,7 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 
 func _on_body_entered(body):
 	# 土管に衝突した場合
-	if body.name == "Block":
+	if body.is_in_group("Blocks"):
 		touch_ground = true
 		game_over = true
 		# 物理判定を無くす

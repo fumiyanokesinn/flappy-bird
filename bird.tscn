@@ -7,17 +7,19 @@
 radius = 69.567
 
 [node name="Bird" type="RigidBody2D"]
-position = Vector2(124, 140)
-scale = Vector2(0.998628, 1)
+collision_layer = 0
+collision_mask = 0
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_iyleg")
 metadata/_edit_group_ = true
 
 [node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_r6w4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_3t66o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://8qb0aj8ixheo"]
+[gd_scene load_steps=5 format=3 uid="uid://8qb0aj8ixheo"]
 
 [ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="1_adam2"]
 [ext_resource type="Script" path="res://block.gd" id="1_mts5g"]
@@ -6,14 +6,30 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
 
-[node name="Block" type="StaticBody2D"]
-position = Vector2(87, -2)
-script = ExtResource("1_mts5g")
-metadata/_edit_group_ = true
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tirlk"]
 
-[node name="Image" type="Sprite2D" parent="."]
+[node name="Block" type="StaticBody2D" groups=["Blocks"]]
+script = ExtResource("1_mts5g")
+
+[node name="UpperWallImage" type="Sprite2D" parent="."]
 texture = ExtResource("1_adam2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+[node name="UpperWallColl" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="LowWallImage" type="Sprite2D" parent="."]
+position = Vector2(0, 800)
+texture = ExtResource("1_adam2")
+
+[node name="LowWallColl" type="CollisionShape2D" parent="."]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="PointArea" type="Area2D" parent="."]
+position = Vector2(0, 400)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointArea"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tirlk")
+one_way_collision_margin = 0.0
