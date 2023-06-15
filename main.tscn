@@ -14,7 +14,7 @@ size = Vector2(175, 590)
 script = ExtResource("1_r30sg")
 
 [node name="Block" type="StaticBody2D" parent="." groups=["Blocks"]]
-position = Vector2(627, -1)
+position = Vector2(800, 4)
 script = ExtResource("3_0vy35")
 metadata/_edit_group_ = true
 
@@ -42,10 +42,143 @@ scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_tirlk")
 one_way_collision_margin = 0.0
 
+[node name="Block2" type="StaticBody2D" parent="." groups=["Blocks"]]
+position = Vector2(1200, -204)
+script = ExtResource("3_0vy35")
+metadata/_edit_group_ = true
+
+[node name="UpperWallImage" type="Sprite2D" parent="Block2"]
+texture = ExtResource("4_nar4j")
+
+[node name="UpperWallColl" type="CollisionShape2D" parent="Block2"]
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="LowWallImage" type="Sprite2D" parent="Block2"]
+position = Vector2(0, 800)
+texture = ExtResource("4_nar4j")
+
+[node name="LowWallColl" type="CollisionShape2D" parent="Block2"]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="PointArea" type="Area2D" parent="Block2"]
+position = Vector2(0, 400)
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2/PointArea"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tirlk")
+one_way_collision_margin = 0.0
+
+[node name="Block3" type="StaticBody2D" parent="." groups=["Blocks"]]
+position = Vector2(1600, -16)
+script = ExtResource("3_0vy35")
+metadata/_edit_group_ = true
+
+[node name="UpperWallImage" type="Sprite2D" parent="Block3"]
+texture = ExtResource("4_nar4j")
+
+[node name="UpperWallColl" type="CollisionShape2D" parent="Block3"]
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="LowWallImage" type="Sprite2D" parent="Block3"]
+position = Vector2(0, 800)
+texture = ExtResource("4_nar4j")
+
+[node name="LowWallColl" type="CollisionShape2D" parent="Block3"]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="PointArea" type="Area2D" parent="Block3"]
+position = Vector2(0, 400)
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3/PointArea"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tirlk")
+one_way_collision_margin = 0.0
+
+[node name="Block4" type="StaticBody2D" parent="." groups=["Blocks"]]
+position = Vector2(2000, -126)
+script = ExtResource("3_0vy35")
+metadata/_edit_group_ = true
+
+[node name="UpperWallImage" type="Sprite2D" parent="Block4"]
+texture = ExtResource("4_nar4j")
+
+[node name="UpperWallColl" type="CollisionShape2D" parent="Block4"]
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="LowWallImage" type="Sprite2D" parent="Block4"]
+position = Vector2(0, 800)
+texture = ExtResource("4_nar4j")
+
+[node name="LowWallColl" type="CollisionShape2D" parent="Block4"]
+position = Vector2(0, 800)
+shape = SubResource("RectangleShape2D_vjnnt")
+
+[node name="PointArea" type="Area2D" parent="Block4"]
+position = Vector2(0, 400)
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4/PointArea"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tirlk")
+one_way_collision_margin = 0.0
+
 [node name="Bird" parent="." instance=ExtResource("1_ir62d")]
 position = Vector2(236, 336)
 collision_layer = 1
 collision_mask = 1
+
+[node name="HUD" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 155.0
+grow_horizontal = 2
+
+[node name="Count" type="Label" parent="HUD/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="StartCount" type="Label" parent="HUD"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartTimer" type="Timer" parent="HUD/StartCount"]
+process_mode = 3
 
 [node name="Wall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -54,28 +187,12 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PackedVector2Array(-6, -3, -1, -91, 1386, -91, 1386, 789, -1, 787, -3, 720, 1278, 720, 1278, -1)
 
-[node name="HUD" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 141.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Count" type="Label" parent="HUD/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 30
-text = "11111"
-
 [connection signal="tree_exiting" from="Block" to="." method="_on_block_tree_exiting"]
 [connection signal="body_exited" from="Block/PointArea" to="." method="_on_point_area_body_exited"]
+[connection signal="tree_exiting" from="Block2" to="." method="_on_block_tree_exiting"]
+[connection signal="body_exited" from="Block2/PointArea" to="." method="_on_point_area_body_exited"]
+[connection signal="tree_exiting" from="Block3" to="." method="_on_block_tree_exiting"]
+[connection signal="body_exited" from="Block3/PointArea" to="." method="_on_point_area_body_exited"]
+[connection signal="tree_exiting" from="Block4" to="." method="_on_block_tree_exiting"]
+[connection signal="body_exited" from="Block4/PointArea" to="." method="_on_point_area_body_exited"]
+[connection signal="timeout" from="HUD/StartCount/StartTimer" to="." method="_on_start_timer_timeout"]
