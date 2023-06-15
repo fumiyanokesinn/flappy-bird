@@ -11,9 +11,15 @@ var enteredDirection = Vector2(-3, 1).normalized()
 # 衝撃
 @onready var palse = palseDirection * 50
 @onready var enteredPalse = enteredDirection * 500
+@onready var CollisionBird = $CollisionBird
+
+func _ready():
+	CollisionBird.disabled = false
 
 func _physics_process(delta):
 	if touch_ground == true:
+		# 物理判定を無くす
+		CollisionBird.disabled = true
 		apply_central_impulse(enteredPalse)
 		apply_torque_impulse(30000)
 
@@ -30,8 +36,6 @@ func _on_body_entered(body):
 	if body.is_in_group("Blocks"):
 		touch_ground = true
 		game_over = true
-		# 物理判定を無くす
-		set_collision_mask_value(1,false)
 
 
 func _on_body_exited(body):

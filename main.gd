@@ -47,14 +47,13 @@ func _on_point_area_body_exited(body):
 
 
 func _on_start_timer_timeout():
+	startTimer -= 1
 	
 	if startTimer == 0:
 		# 3秒経過後
-		startTimer = 3
+		get_tree().paused = false 
+	elif startTimer == -1:
 		StartCount.hide()
 		StartTimer.stop()
-		get_tree().paused = false
-	else:
-		# 3秒未経過
-		startTimer -= 1
+	
 	StartCount.text = str(startTimer)

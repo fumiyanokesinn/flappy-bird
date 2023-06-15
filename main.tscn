@@ -131,8 +131,6 @@ one_way_collision_margin = 0.0
 
 [node name="Bird" parent="." instance=ExtResource("1_ir62d")]
 position = Vector2(236, 336)
-collision_layer = 1
-collision_mask = 1
 
 [node name="HUD" type="Control" parent="."]
 z_index = 1
