@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b23yhmlhgx2km"]
+[gd_scene load_steps=3 format=3 uid="uid://b23yhmlhgx2km"]
+
+[ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_udyop"]
+[ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="2_kprd6"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -7,3 +10,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 119.0
+offset_right = -2.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_udyop")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "[center]FlappyBird"
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.324
+anchor_top = 0.426
+anchor_right = 0.676
+anchor_bottom = 0.574
+offset_left = 0.279999
+offset_top = 0.279968
+offset_right = -0.28009
+offset_bottom = -0.279999
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_kprd6")
+text = "START"
