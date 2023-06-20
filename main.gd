@@ -51,9 +51,12 @@ func _on_start_timer_timeout():
 	
 	if startTimer == 0:
 		# 3秒経過後
+		$StartSound.play()
 		get_tree().paused = false 
 	elif startTimer == -1:
 		StartCount.hide()
 		StartTimer.stop()
+	else:
+		$TimerSound.play()
 	
 	StartCount.text = str(startTimer)

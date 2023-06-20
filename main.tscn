@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://3s1ri75omq2p"]
+[gd_scene load_steps=9 format=3 uid="uid://3s1ri75omq2p"]
 
 [ext_resource type="PackedScene" uid="uid://4u3j5o4orug4" path="res://bird.tscn" id="1_ir62d"]
 [ext_resource type="Script" path="res://main.gd" id="1_r30sg"]
 [ext_resource type="Script" path="res://block.gd" id="3_0vy35"]
 [ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="4_nar4j"]
+[ext_resource type="AudioStream" uid="uid://dcymcjvnv74b" path="res://addons/sound/Timer.mp3" id="5_li6ov"]
+[ext_resource type="AudioStream" uid="uid://dhbxcdnvl461y" path="res://addons/sound/Start.mp3" id="6_2lqno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
@@ -129,9 +131,6 @@ scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_tirlk")
 one_way_collision_margin = 0.0
 
-[node name="Bird" parent="." instance=ExtResource("1_ir62d")]
-position = Vector2(236, 336)
-
 [node name="HUD" type="Control" parent="."]
 z_index = 1
 layout_mode = 3
@@ -178,12 +177,22 @@ vertical_alignment = 1
 [node name="StartTimer" type="Timer" parent="HUD/StartCount"]
 process_mode = 3
 
+[node name="Bird" parent="." instance=ExtResource("1_ir62d")]
+position = Vector2(236, 336)
+
 [node name="Wall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PackedVector2Array(-6, -3, -1, -91, 1386, -91, 1386, 789, -1, 787, -3, 720, 1278, 720, 1278, -1)
+
+[node name="TimerSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("5_li6ov")
+
+[node name="StartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2lqno")
 
 [connection signal="tree_exiting" from="Block" to="." method="_on_block_tree_exiting"]
 [connection signal="body_exited" from="Block/PointArea" to="." method="_on_point_area_body_exited"]
