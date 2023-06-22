@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b23yhmlhgx2km"]
+[gd_scene load_steps=6 format=3 uid="uid://b23yhmlhgx2km"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_bdpxv"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_udyop"]
 [ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="2_kprd6"]
+[ext_resource type="Theme" uid="uid://b7j7ququj1cru" path="res://addons/tres/title.tres" id="2_wkyrk"]
 [ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="4_dtdxa"]
 
 [node name="Start" type="Control"]
@@ -26,6 +27,7 @@ offset_right = 1.0
 offset_bottom = -442.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_wkyrk")
 theme_override_fonts/normal_font = ExtResource("1_udyop")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
