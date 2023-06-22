@@ -49,7 +49,6 @@ offset_right = 267.0
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
-tooltip_text = "kikikikik"
 focus_mode = 0
 theme = ExtResource("2_kprd6")
 text = "START"
