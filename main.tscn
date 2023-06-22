@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3s1ri75omq2p"]
+[gd_scene load_steps=11 format=3 uid="uid://b7478q0rr5x3i"]
 
 [ext_resource type="PackedScene" uid="uid://4u3j5o4orug4" path="res://bird.tscn" id="1_ir62d"]
 [ext_resource type="Script" path="res://main.gd" id="1_r30sg"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="4_nar4j"]
 [ext_resource type="AudioStream" uid="uid://dcymcjvnv74b" path="res://addons/sound/Timer.mp3" id="5_li6ov"]
 [ext_resource type="AudioStream" uid="uid://dhbxcdnvl461y" path="res://addons/sound/Start.mp3" id="6_2lqno"]
+[ext_resource type="Script" path="res://mainBackground.gd" id="7_esn0b"]
+[ext_resource type="Texture2D" uid="uid://cls2tvamhwupv" path="res://image/backGround.png" id="8_8u6j7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
@@ -193,6 +195,18 @@ stream = ExtResource("5_li6ov")
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2lqno")
+
+[node name="Background" type="ParallaxBackground" parent="."]
+script = ExtResource("7_esn0b")
+
+[node name="Layer1" type="ParallaxLayer" parent="Background"]
+position = Vector2(160, 0)
+motion_mirroring = Vector2(1625, 0)
+
+[node name="BackGround" type="Sprite2D" parent="Background/Layer1"]
+position = Vector2(480, 360)
+scale = Vector2(6.5, 9.331)
+texture = ExtResource("8_8u6j7")
 
 [connection signal="tree_exiting" from="Block" to="." method="_on_block_tree_exiting"]
 [connection signal="body_exited" from="Block/PointArea" to="." method="_on_point_area_body_exited"]

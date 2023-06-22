@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b23yhmlhgx2km"]
+[gd_scene load_steps=8 format=3 uid="uid://cpbn26crit7tp"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_bdpxv"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_udyop"]
 [ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="2_kprd6"]
 [ext_resource type="Theme" uid="uid://b7j7ququj1cru" path="res://addons/tres/title.tres" id="2_wkyrk"]
 [ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="4_dtdxa"]
-[ext_resource type="Script" path="res://Background.gd" id="6_n5174"]
+[ext_resource type="Script" path="res://background.gd" id="6_ro48q"]
 [ext_resource type="Texture2D" uid="uid://cls2tvamhwupv" path="res://image/backGround.png" id="6_t4xf8"]
 
 [node name="Start" type="Control"]
@@ -58,7 +58,7 @@ text = "START"
 stream = ExtResource("4_dtdxa")
 
 [node name="Background" type="ParallaxBackground" parent="."]
-script = ExtResource("6_n5174")
+script = ExtResource("6_ro48q")
 
 [node name="Layer1" type="ParallaxLayer" parent="Background"]
 position = Vector2(160, 0)
