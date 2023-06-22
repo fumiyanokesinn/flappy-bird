@@ -42,6 +42,7 @@ func _on_block_tree_exiting():
 	add_child.call_deferred(block)
 
 func _on_point_area_body_exited(body):
+	$AreaExitedSound.play()
 	score += 1
 	Count.text = str(score)
 

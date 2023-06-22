@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7478q0rr5x3i"]
+[gd_scene load_steps=13 format=3 uid="uid://b7478q0rr5x3i"]
 
 [ext_resource type="PackedScene" uid="uid://4u3j5o4orug4" path="res://bird.tscn" id="1_ir62d"]
 [ext_resource type="Script" path="res://main.gd" id="1_r30sg"]
 [ext_resource type="Script" path="res://block.gd" id="3_0vy35"]
+[ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="4_enhti"]
 [ext_resource type="Texture2D" uid="uid://bghv5gi70ofx5" path="res://image/dokan.png" id="4_nar4j"]
 [ext_resource type="AudioStream" uid="uid://dcymcjvnv74b" path="res://addons/sound/Timer.mp3" id="5_li6ov"]
 [ext_resource type="AudioStream" uid="uid://dhbxcdnvl461y" path="res://addons/sound/Start.mp3" id="6_2lqno"]
 [ext_resource type="Script" path="res://mainBackground.gd" id="7_esn0b"]
 [ext_resource type="Texture2D" uid="uid://cls2tvamhwupv" path="res://image/backGround.png" id="8_8u6j7"]
+[ext_resource type="AudioStream" uid="uid://7jdwmss3lrbe" path="res://addons/sound/areaExited.mp3" id="8_37e4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
@@ -154,7 +156,8 @@ grow_horizontal = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_enhti")
+theme_override_font_sizes/font_size = 90
 text = "0"
 
 [node name="StartCount" type="Label" parent="HUD"]
@@ -195,6 +198,9 @@ stream = ExtResource("5_li6ov")
 
 [node name="StartSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2lqno")
+
+[node name="AreaExitedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_37e4m")
 
 [node name="Background" type="ParallaxBackground" parent="."]
 script = ExtResource("7_esn0b")
