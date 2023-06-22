@@ -15,20 +15,21 @@ grow_vertical = 2
 script = ExtResource("1_bdpxv")
 
 [node name="Title" type="RichTextLabel" parent="."]
+clip_contents = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 119.0
-offset_right = -2.0
-offset_bottom = -505.0
+offset_left = 1.0
+offset_top = 154.0
+offset_right = 1.0
+offset_bottom = -442.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_udyop")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "[center]FlappyBird"
+text = "[wave amp=800 freq=2][center]FlappyBird"
 scroll_active = false
 
 [node name="Button" type="Button" parent="."]
