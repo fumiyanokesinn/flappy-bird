@@ -30,7 +30,6 @@ func _on_block_tree_exiting():
 	var ybase = randf_range(-250,180)
 	var block = Block.instantiate()
 	block.position.x = BLOCK_BASE_X
-	
 	block.position.y = ybase
 	block.tree_exiting.connect(_on_block_tree_exiting)
 	
