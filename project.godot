@@ -18,6 +18,7 @@ config/icon="res://image/icon.svg"
 [autoload]
 
 SceneTransction="*res://scene_transction.tscn"
+Global="*res://global.gd"
 
 [display]
 

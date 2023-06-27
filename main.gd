@@ -33,17 +33,14 @@ func _on_block_tree_exiting():
 	block.position.y = ybase
 	block.tree_exiting.connect(_on_block_tree_exiting)
 	
-	
-	# 土管の速度を設定
-#	block.velocity.x = -200 * dokan_cnt + block.velocity.x
-	
 	# 土管を再出現
 	add_child.call_deferred(block)
 
 func _on_point_area_body_exited(body):
-	$AreaExitedSound.play()
-	score += 1
-	Count.text = str(score)
+	if Global.isGaming:
+		$AreaExitedSound.play()
+		score += 1
+		Count.text = str(score)
 
 
 func _on_start_timer_timeout():
