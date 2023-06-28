@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const BLACK = Color(0, 0, 0, 1)
+
 var touch_ground = false
 # 衝撃の強さ
 var palsePower = 50
@@ -31,4 +33,6 @@ func _on_body_entered(body):
 			set_collision_mask_value(1,false)
 			apply_impulse(enteredPalse)
 			apply_torque_impulse(60000)
+			await get_tree().create_timer(3).timeout
+			SceneTransction.change_scene("res://game_over.tscn",BLACK)
 
