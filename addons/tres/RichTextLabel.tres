@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://b28jvamr1i1a0"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.819608, 0.886275, 0.964706, 1)
+RichTextLabel/constants/outline_size = 10
