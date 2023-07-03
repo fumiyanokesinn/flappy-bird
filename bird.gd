@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const BLACK = Color(0, 0, 0, 1)
+signal game_over
 
 var touch_ground = false
 # 衝撃の強さ
@@ -34,5 +34,5 @@ func _on_body_entered(body):
 			apply_impulse(enteredPalse)
 			apply_torque_impulse(60000)
 			await get_tree().create_timer(3).timeout
-			SceneTransction.change_scene("res://game_over.tscn",BLACK)
+			emit_signal("game_over")
 

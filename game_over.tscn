@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce2iir315d5yp"]
+[gd_scene load_steps=7 format=3 uid="uid://ce2iir315d5yp"]
 
+[ext_resource type="Script" path="res://game_over.gd" id="1_21lwp"]
 [ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="1_vc331"]
 [ext_resource type="Theme" uid="uid://b28jvamr1i1a0" path="res://addons/tres/RichTextLabel.tres" id="2_7ayfi"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="3_e6rel"]
 [ext_resource type="Script" path="res://RichTextLabel.gd" id="4_3pv68"]
+[ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="6_2t3h5"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_21lwp")
 
 [node name="GameOverText" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -108,7 +111,12 @@ hint_underlined = false
 deselect_on_focus_loss_enabled = false
 script = ExtResource("4_3pv68")
 
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2t3h5")
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="mouse_entered" from="RetryButton/Text" to="RetryButton/Text" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="RetryButton/Text" to="RetryButton/Text" method="_on_mouse_exited"]
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]
 [connection signal="mouse_entered" from="EndButton/Text" to="EndButton/Text" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="EndButton/Text" to="EndButton/Text" method="_on_mouse_exited"]

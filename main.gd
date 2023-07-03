@@ -10,13 +10,14 @@ var startTimer = 3
 @onready var StartTimer = $HUD/StartCount/StartTimer
 @onready var StartCount = $HUD/StartCount
 
+
 var Block = preload("res://block.tscn")
+var GameOver = preload("res://game_over.tscn")
 
 func start_count():
 	StartCount.show()
 	StartTimer.start()
 	get_tree().paused = true
-	
 
 func _ready():
 	start_count()
@@ -49,7 +50,7 @@ func _on_start_timer_timeout():
 	if startTimer == 0:
 		# 3秒経過後
 		$StartSound.play()
-		get_tree().paused = false 
+		get_tree().paused = false
 	elif startTimer == -1:
 		StartCount.hide()
 		StartTimer.stop()
@@ -57,3 +58,9 @@ func _on_start_timer_timeout():
 		$TimerSound.play()
 	
 	StartCount.text = str(startTimer)
+
+
+
+
+func _on_bird_game_over():
+	SceneTransction.change_scene(GameOver,Global.DARK_BLUE)
