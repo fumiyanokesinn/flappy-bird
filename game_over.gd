@@ -1,7 +1,7 @@
 extends Control
 
-var Main = preload("res://main.tscn")
-var Start = preload("res://start.tscn")
+var Main = load("res://main.tscn")
+var Start = load("res://start.tscn")
 
 func _on_retry_button_pressed():
 	$ButtonClick.play()
