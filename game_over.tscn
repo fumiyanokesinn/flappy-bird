@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ce2iir315d5yp"]
 
-[ext_resource type="Script" path="res://global.gd" id="1_i6dim"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_tf262"]
 [ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="1_vc331"]
 [ext_resource type="Theme" uid="uid://b28jvamr1i1a0" path="res://addons/tres/RichTextLabel.tres" id="2_7ayfi"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="3_e6rel"]
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i6dim")
+script = ExtResource("1_tf262")
 
 [node name="GameOverText" type="RichTextLabel" parent="."]
 layout_mode = 1
