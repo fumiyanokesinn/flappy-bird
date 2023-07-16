@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ranking.gd" id="1_nlwsf"]
 [ext_resource type="Theme" uid="uid://bcq5l7sk3nk6j" path="res://addons/tres/ranking.tres" id="2_lhfu0"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="2_q8suw"]
-[ext_resource type="Texture2D" uid="uid://l6la8jytrd0s" path="res://image/ranking.png" id="4_0ga1e"]
+[ext_resource type="Texture2D" uid="uid://ipprlmfjjl7o" path="res://image/ranking.png" id="4_0ga1e"]
 
 [node name="Ranking" type="Control"]
 layout_mode = 3
