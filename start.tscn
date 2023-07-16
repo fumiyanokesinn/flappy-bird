@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpbn26crit7tp"]
+[gd_scene load_steps=10 format=3 uid="uid://be1jbwpdicagj"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_bdpxv"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_udyop"]
-[ext_resource type="Theme" uid="uid://cqhr41bey3lle" path="res://addons/tres/start.tres" id="2_kprd6"]
+[ext_resource type="Theme" path="res://addons/tres/start.tres" id="2_kprd6"]
 [ext_resource type="Theme" uid="uid://b7j7ququj1cru" path="res://addons/tres/title.tres" id="2_wkyrk"]
 [ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="4_dtdxa"]
 [ext_resource type="Theme" uid="uid://b28jvamr1i1a0" path="res://addons/tres/RichTextLabel.tres" id="5_7vq3q"]

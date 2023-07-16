@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://mc5tu0hqmd07"]
+[gd_scene load_steps=5 format=3 uid="uid://coyleyxtx2owq"]
 
 [ext_resource type="Script" path="res://ranking.gd" id="1_nlwsf"]
+[ext_resource type="Theme" uid="uid://bcq5l7sk3nk6j" path="res://addons/tres/ranking.tres" id="2_lhfu0"]
+[ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="2_q8suw"]
+[ext_resource type="Texture2D" uid="uid://l6la8jytrd0s" path="res://image/ranking.png" id="4_0ga1e"]
 
 [node name="Ranking" type="Control"]
 layout_mode = 3
@@ -18,9 +21,31 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme = ExtResource("2_lhfu0")
+theme_override_fonts/font = ExtResource("2_q8suw")
+theme_override_font_sizes/font_size = 80
+text = "SUPER　PLAYERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(166.203, 364)
+scale = Vector2(0.524219, 0.547222)
+texture = ExtResource("4_0ga1e")
+offset = Vector2(900, 0)
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
