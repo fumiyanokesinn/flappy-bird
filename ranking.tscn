@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://coyleyxtx2owq"]
+[gd_scene load_steps=9 format=3 uid="uid://coyleyxtx2owq"]
 
 [ext_resource type="Script" path="res://ranking.gd" id="1_nlwsf"]
 [ext_resource type="Theme" uid="uid://bcq5l7sk3nk6j" path="res://addons/tres/ranking.tres" id="2_lhfu0"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="2_q8suw"]
 [ext_resource type="Texture2D" uid="uid://ipprlmfjjl7o" path="res://image/ranking.png" id="4_0ga1e"]
+[ext_resource type="Theme" uid="uid://ca5y1g1ywabgp" path="res://addons/tres/start.tres" id="5_dnw8l"]
+[ext_resource type="Theme" uid="uid://b28jvamr1i1a0" path="res://addons/tres/RichTextLabel.tres" id="6_k0qru"]
+[ext_resource type="Script" path="res://RichTextLabel.gd" id="7_2y6d0"]
+[ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="8_siter"]
 
 [node name="Ranking" type="Control"]
 layout_mode = 3
@@ -39,6 +43,7 @@ theme_override_font_sizes/font_size = 80
 text = "SUPER　PLAYERS"
 horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -48,4 +53,49 @@ scale = Vector2(0.524219, 0.547222)
 texture = ExtResource("4_0ga1e")
 offset = Vector2(900, 0)
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -631.0
+offset_top = 283.0
+offset_right = -97.0
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.471471, 0.568025)
+focus_mode = 0
+theme = ExtResource("5_dnw8l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_k0qru")
+theme_override_fonts/normal_font = ExtResource("2_q8suw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]
+BUCK"
+fit_content = true
+scroll_active = false
+tab_size = 0
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+script = ExtResource("7_2y6d0")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_siter")
+
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="pressed" from="Button" to="." method="_on_buck_button_pressed"]
+[connection signal="mouse_entered" from="Button/RichTextLabel" to="Button/RichTextLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button/RichTextLabel" to="Button/RichTextLabel" method="_on_mouse_exited"]

@@ -2,7 +2,8 @@ extends Control
 
 var users = []
 var font = preload("res://addons/font/PressStart2P.ttf")
-var tres = preload("res://addons/tres/ranking.tres")
+var tres = preload("res://addons/tres/RichTextLabel.tres")
+var Start = preload("res://start.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,8 +18,11 @@ func showUsers(users : Array):
 		label.custom_minimum_size = Vector2(0,100)
 		# 順位によってレイアウトを変更する
 		setLabeltext(label,user,index)
+		label.theme_type_variation
 		label.add_theme_font_size_override("normal_font_size",40)
 		label.add_theme_font_override("normal_font",font)
+		label.clip_contents = false
+		label.theme = tres
 		$VBox.add_child(label)
 		index += 1
 
@@ -46,3 +50,8 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 		showUsers(users)
 	else:
 		print("JSON Parse Error:",json.get_error_message(),"in",body.get_string_from_utf8(), " at line ", json.get_error_line())
+
+
+func _on_buck_button_pressed():
+	$ButtonClick.play()
+	SceneTransction.change_scene(Start,Global.DARK_BLUE )
