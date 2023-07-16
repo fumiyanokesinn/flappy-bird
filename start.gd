@@ -1,7 +1,7 @@
 extends Control
 
-var Main = preload("res://main.tscn")
-var Ranking = preload("res://ranking.tscn")
+var Main = load("res://main.tscn")
+var Ranking = load("res://ranking.tscn")
 
 func _on_start_button_pressed():
 	$ButtonClick.play()

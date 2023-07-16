@@ -1,9 +1,8 @@
 extends Control
 
-var users = []
 var font = preload("res://addons/font/PressStart2P.ttf")
 var tres = preload("res://addons/tres/RichTextLabel.tres")
-var Start = preload("res://start.tscn")
+@onready var Start = preload("res://start.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +17,6 @@ func showUsers(users : Array):
 		label.custom_minimum_size = Vector2(0,100)
 		# 順位によってレイアウトを変更する
 		setLabeltext(label,user,index)
-		label.theme_type_variation
 		label.add_theme_font_size_override("normal_font_size",40)
 		label.add_theme_font_override("normal_font",font)
 		label.clip_contents = false
@@ -41,7 +39,7 @@ func setLabeltext(label : RichTextLabel,user : Dictionary,index : int):
 	pass
 
 # User検索APIのレスポンスを作成
-func _on_http_request_request_completed(result, response_code, headers, body):
+func _on_http_request_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	var error = json.parse(body.get_string_from_utf8())
 	

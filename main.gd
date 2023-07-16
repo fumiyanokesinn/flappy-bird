@@ -37,7 +37,7 @@ func _on_block_tree_exiting():
 	# 土管を再出現
 	add_child.call_deferred(block)
 
-func _on_point_area_body_exited(body):
+func _on_point_area_body_exited():
 	if Global.isGaming:
 		$AreaExitedSound.play()
 		score += 1
