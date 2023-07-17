@@ -74,6 +74,3 @@ func sendPostRequest():
 	$HTTPRequest.request(Global.USER_URL,headers,HTTPClient.METHOD_POST,json)
 
 
-func _on_http_request_request_completed(result, response_code, headers, body):
-	print(result)
-	print(body)
