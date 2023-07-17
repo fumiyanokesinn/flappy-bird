@@ -1,6 +1,6 @@
 extends Node
 
-const BLOCK_BASE_X = 1500
+const BLOCK_BASE_X = 1800
 var dokan_cnt = 0
 
 var score = 0
@@ -33,11 +33,11 @@ func _on_block_tree_exiting():
 	block.position.x = BLOCK_BASE_X
 	block.position.y = ybase
 	block.tree_exiting.connect(_on_block_tree_exiting)
-	
 	# 土管を再出現
 	add_child.call_deferred(block)
+	block.get_node("PointArea").body_exited.connect(_on_point_area_body_exited)
 
-func _on_point_area_body_exited():
+func _on_point_area_body_exited(_body:Node):
 	if Global.isGaming:
 		$AreaExitedSound.play()
 		score += 1
