@@ -4,7 +4,7 @@ const POSITION_X = 600
 var POSITION_Y = 200
 
 func _on_button_pressed():
-	$HTTPRequest.request("http://localhost/api/user")
+	$HTTPRequest.request(Global.USER_URL)
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.new()

@@ -63,4 +63,17 @@ func _on_start_timer_timeout():
 
 
 func _on_bird_game_over():
+	sendPostRequest()
 	SceneTransction.change_scene(GameOver,Global.DARK_BLUE)
+
+# 登録APIを送信する
+func sendPostRequest():
+	var json = JSON.stringify({"name":Global.playerName if Global.playerName != "" else "nanasi", "score":score})
+	print(json)
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request(Global.USER_URL,headers,HTTPClient.METHOD_POST,json)
+
+
+func _on_http_request_request_completed(result, response_code, headers, body):
+	print(result)
+	print(body)

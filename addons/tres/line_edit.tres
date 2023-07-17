@@ -4,5 +4,5 @@
 
 [resource]
 LineEdit/constants/minimum_character_width = 10
-LineEdit/font_sizes/font_size = 70
+LineEdit/font_sizes/font_size = 40
 LineEdit/fonts/font = ExtResource("1_ql86v")

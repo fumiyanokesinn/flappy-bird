@@ -143,7 +143,7 @@ offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_pi3i4")
-placeholder_text = "名前を入力して"
+placeholder_text = "Enter Your Name!"
 alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
