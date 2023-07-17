@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d3sumlikwenj2"]
+
+[ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_ql86v"]
+
+[resource]
+LineEdit/constants/minimum_character_width = 10
+LineEdit/font_sizes/font_size = 70
+LineEdit/fonts/font = ExtResource("1_ql86v")
