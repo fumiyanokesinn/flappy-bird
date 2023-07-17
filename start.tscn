@@ -129,7 +129,7 @@ position = Vector2(533, 358)
 scale = Vector2(6.5, 9.331)
 texture = ExtResource("6_t4xf8")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="PlayerName" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
