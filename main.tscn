@@ -20,7 +20,7 @@ size = Vector2(175, 590)
 script = ExtResource("1_r30sg")
 
 [node name="Block" type="StaticBody2D" parent="." groups=["Blocks"]]
-position = Vector2(800, 4)
+position = Vector2(801, 4)
 script = ExtResource("3_0vy35")
 metadata/_edit_group_ = true
 
@@ -49,7 +49,7 @@ shape = SubResource("RectangleShape2D_tirlk")
 one_way_collision_margin = 0.0
 
 [node name="Block2" type="StaticBody2D" parent="." groups=["Blocks"]]
-position = Vector2(1200, -204)
+position = Vector2(1300, -204)
 script = ExtResource("3_0vy35")
 metadata/_edit_group_ = true
 
@@ -78,7 +78,7 @@ shape = SubResource("RectangleShape2D_tirlk")
 one_way_collision_margin = 0.0
 
 [node name="Block3" type="StaticBody2D" parent="." groups=["Blocks"]]
-position = Vector2(1600, -16)
+position = Vector2(1800, -16)
 script = ExtResource("3_0vy35")
 metadata/_edit_group_ = true
 
@@ -107,7 +107,7 @@ shape = SubResource("RectangleShape2D_tirlk")
 one_way_collision_margin = 0.0
 
 [node name="Block4" type="StaticBody2D" parent="." groups=["Blocks"]]
-position = Vector2(2000, -126)
+position = Vector2(2300, -126)
 script = ExtResource("3_0vy35")
 metadata/_edit_group_ = true
 
