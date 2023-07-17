@@ -30,19 +30,18 @@ func _on_block_tree_exiting():
 	
 	var ybase = randf_range(-250,180)
 	var block = Block.instantiate()
-	block.position.x = BLOCK_BASE_X
+	block.position.x = BLOCK_BASE_X    
 	block.position.y = ybase
 	block.tree_exiting.connect(_on_block_tree_exiting)
 	# 土管を再出現
 	add_child.call_deferred(block)
 	block.get_node("PointArea").body_exited.connect(_on_point_area_body_exited)
 
-func _on_point_area_body_exited(_body:Node):
-	if Global.isGaming:
+func _on_point_area_body_exited(body:Node):
+	if Global.isGaming && body.name == "Bird":
 		$AreaExitedSound.play()
 		score += 1
 		Count.text = str(score)
-
 
 func _on_start_timer_timeout():
 	startTimer -= 1
@@ -69,8 +68,6 @@ func _on_bird_game_over():
 # 登録APIを送信する
 func sendPostRequest():
 	var json = JSON.stringify({"name":Global.playerName if Global.playerName != "" else "nanasi", "score":score})
-	print(json)
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.request(Global.USER_URL,headers,HTTPClient.METHOD_POST,json)
-
 

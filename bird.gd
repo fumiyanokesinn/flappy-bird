@@ -26,15 +26,12 @@ func _integrate_forces(state:PhysicsDirectBodyState2D):
 		
 
 func _on_body_entered(body):
-	pass
-	
-#	if Global.isGaming:
-#		# 土管に衝突した場合
-#		if body.is_in_group("Blocks"):
-#			Global.isGaming = false
-#			set_collision_mask_value(1,false)
-#			apply_impulse(enteredPalse)
-#			apply_torque_impulse(60000)
-#			await get_tree().create_timer(3).timeout
-#			emit_signal("game_over")
-
+	if Global.isGaming:
+		# 土管に衝突した場合
+		if body.is_in_group("Blocks"):
+			Global.isGaming = false
+			set_collision_mask_value(1,false)
+			apply_impulse(enteredPalse)
+			apply_torque_impulse(60000)
+			await get_tree().create_timer(3).timeout
+			emit_signal("game_over")
