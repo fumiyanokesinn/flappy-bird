@@ -6,7 +6,7 @@ var tres = preload("res://addons/tres/RichTextLabel.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HTTPRequest.request("http://localhost/api/user")
+	$HTTPRequest.request(Global.USER_URL)
 
 # 画面上にユーザデータを表示する
 func showUsers(users : Array):
