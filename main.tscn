@@ -226,3 +226,4 @@ texture = ExtResource("8_8u6j7")
 [connection signal="body_exited" from="Block4/PointArea" to="." method="_on_point_area_body_exited"]
 [connection signal="timeout" from="HUD/StartCount/StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="game_over" from="Bird" to="." method="_on_bird_game_over"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
