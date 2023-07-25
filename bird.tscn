@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://4u3j5o4orug4"]
+[gd_scene load_steps=5 format=3 uid="uid://4u3j5o4orug4"]
 
 [ext_resource type="Script" path="res://bird.gd" id="1_iyleg"]
 [ext_resource type="Texture2D" uid="uid://bwbtenf342v5l" path="res://image/icon.svg" id="2_r6w4s"]
+[ext_resource type="AudioStream" uid="uid://bnky735nf0qwl" path="res://addons/sound/blockHit.mp3" id="3_t4hy7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3t66o"]
 radius = 69.567
@@ -25,5 +26,8 @@ shape = SubResource("CircleShape2D_3t66o")
 [node name="CollisionBird" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.8, 0.8)
 shape = SubResource("CircleShape2D_3t66o")
+
+[node name="BlockHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t4hy7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

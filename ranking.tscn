@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://coyleyxtx2owq"]
+[gd_scene load_steps=10 format=3 uid="uid://coyleyxtx2owq"]
 
 [ext_resource type="Script" path="res://ranking.gd" id="1_nlwsf"]
 [ext_resource type="Theme" uid="uid://bcq5l7sk3nk6j" path="res://addons/tres/ranking.tres" id="2_lhfu0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://b28jvamr1i1a0" path="res://addons/tres/RichTextLabel.tres" id="6_k0qru"]
 [ext_resource type="Script" path="res://RichTextLabel.gd" id="7_2y6d0"]
 [ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="8_siter"]
+[ext_resource type="AudioStream" uid="uid://58dnca55hdsu" path="res://addons/sound/ranking.mp3" id="9_f6mxt"]
 
 [node name="Ranking" type="Control"]
 layout_mode = 3
@@ -94,6 +95,9 @@ script = ExtResource("7_2y6d0")
 
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_siter")
+
+[node name="RankingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_f6mxt")
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_buck_button_pressed"]

@@ -3,6 +3,9 @@ extends Control
 var Main = load("res://main.tscn")
 var Start = load("res://start.tscn")
 
+func _ready():
+	$GameOver.play()
+
 func _on_retry_button_pressed():
 	$ButtonClick.play()
 	Global.isGaming = true

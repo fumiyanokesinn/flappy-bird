@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://be1jbwpdicagj"]
+[gd_scene load_steps=12 format=3 uid="uid://be1jbwpdicagj"]
 
 [ext_resource type="Script" path="res://start.gd" id="1_bdpxv"]
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="1_udyop"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://background.gd" id="6_ro48q"]
 [ext_resource type="Texture2D" uid="uid://cls2tvamhwupv" path="res://image/backGround.png" id="6_t4xf8"]
 [ext_resource type="Theme" uid="uid://d3sumlikwenj2" path="res://addons/tres/line_edit.tres" id="10_pi3i4"]
+[ext_resource type="AudioStream" uid="uid://hshxc0gj6ymk" path="res://addons/sound/title.mp3" id="11_dgxox"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -145,6 +146,9 @@ grow_vertical = 2
 theme = ExtResource("10_pi3i4")
 placeholder_text = "Enter Your Name!"
 alignment = 1
+
+[node name="TitleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_dgxox")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="mouse_entered" from="StartButton/RichTextLabel" to="StartButton/RichTextLabel" method="_on_mouse_entered"]

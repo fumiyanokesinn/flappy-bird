@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpse0cnbovfjh"]
+[gd_scene load_steps=8 format=3 uid="uid://dpse0cnbovfjh"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_tf262"]
 [ext_resource type="Theme" uid="uid://ca5y1g1ywabgp" path="res://addons/tres/start.tres" id="1_vc331"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dd0if8d1a0en8" path="res://addons/font/PressStart2P.ttf" id="3_e6rel"]
 [ext_resource type="Script" path="res://RichTextLabel.gd" id="4_3pv68"]
 [ext_resource type="AudioStream" uid="uid://bp4anv88iwdxl" path="res://addons/sound/buttonClick.mp3" id="6_2t3h5"]
+[ext_resource type="AudioStream" uid="uid://drqc33tmseepe" path="res://addons/sound/gameOver.mp3" id="7_37sjv"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -113,6 +114,9 @@ script = ExtResource("4_3pv68")
 
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_2t3h5")
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_37sjv")
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="mouse_entered" from="RetryButton/Text" to="RetryButton/Text" method="_on_mouse_entered"]

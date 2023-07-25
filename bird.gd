@@ -29,6 +29,7 @@ func _on_body_entered(body):
 	if Global.isGaming:
 		# 土管に衝突した場合
 		if body.is_in_group("Blocks"):
+			$BlockHitSound.play()
 			Global.isGaming = false
 			set_collision_mask_value(1,false)
 			apply_impulse(enteredPalse)

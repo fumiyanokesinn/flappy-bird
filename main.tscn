@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dctojexshdtwb"]
+[gd_scene load_steps=14 format=3 uid="uid://dctojexshdtwb"]
 
 [ext_resource type="PackedScene" uid="uid://4u3j5o4orug4" path="res://bird.tscn" id="1_ir62d"]
 [ext_resource type="Script" path="res://main.gd" id="1_r30sg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://mainBackground.gd" id="7_esn0b"]
 [ext_resource type="Texture2D" uid="uid://cls2tvamhwupv" path="res://image/backGround.png" id="8_8u6j7"]
 [ext_resource type="AudioStream" uid="uid://7jdwmss3lrbe" path="res://addons/sound/areaExited.mp3" id="8_37e4m"]
+[ext_resource type="AudioStream" uid="uid://b52fpaep21ko7" path="res://addons/sound/maou_bgm_cyber41.mp3" id="9_bvvpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjnnt"]
 size = Vector2(175, 590)
@@ -201,6 +202,9 @@ stream = ExtResource("6_2lqno")
 
 [node name="AreaExitedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_37e4m")
+
+[node name="MainSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_bvvpa")
 
 [node name="Background" type="ParallaxBackground" parent="."]
 script = ExtResource("7_esn0b")

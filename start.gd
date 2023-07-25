@@ -4,6 +4,7 @@ var Main = load("res://main.tscn")
 var Ranking = load("res://ranking.tscn")
 
 func _ready():
+	$TitleSound.play()
 	$PlayerName.text = Global.playerName
 
 func _on_start_button_pressed():

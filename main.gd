@@ -49,6 +49,7 @@ func _on_start_timer_timeout():
 	if startTimer == 0:
 		# 3秒経過後
 		$StartSound.play()
+		$MainSound.play()
 		get_tree().paused = false
 	elif startTimer == -1:
 		StartCount.hide()
@@ -64,7 +65,6 @@ func _on_start_timer_timeout():
 func _on_bird_game_over():
 	sendPostRequest()
 	SceneTransction.change_scene(GameOver,Global.DARK_BLUE)
-
 # 登録APIを送信する
 func sendPostRequest():
 	var query = JSON.stringify({"name":Global.playerName if Global.playerName != "" else "nanasi", "score":score})
