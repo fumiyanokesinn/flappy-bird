@@ -123,11 +123,11 @@ script = ExtResource("6_ro48q")
 
 [node name="Layer1" type="ParallaxLayer" parent="Background"]
 position = Vector2(160, 0)
-motion_mirroring = Vector2(1625, 0)
+motion_mirroring = Vector2(1795, 0)
 
 [node name="BackGround" type="Sprite2D" parent="Background/Layer1"]
-position = Vector2(533, 358)
-scale = Vector2(6.5, 9.331)
+position = Vector2(618.25, 374.5)
+scale = Vector2(7.182, 11.9043)
 texture = ExtResource("6_t4xf8")
 
 [node name="PlayerName" type="LineEdit" parent="."]
