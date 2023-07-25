@@ -34,7 +34,7 @@ theme = ExtResource("2_wkyrk")
 theme_override_fonts/normal_font = ExtResource("1_udyop")
 theme_override_font_sizes/normal_font_size = 90
 bbcode_enabled = true
-text = "[wave amp=200 freq=2][center]FlappyBird"
+text = "[wave amp=200 freq=2][center]FlappyGodot"
 scroll_active = false
 
 [node name="StartButton" type="Button" parent="."]
