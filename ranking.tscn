@@ -49,8 +49,8 @@ clip_text = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(166.203, 364)
-scale = Vector2(0.524219, 0.547222)
+position = Vector2(107.836, 373.5)
+scale = Vector2(0.628516, 0.65625)
 texture = ExtResource("4_0ga1e")
 offset = Vector2(900, 0)
 
